@@ -1,0 +1,49 @@
+<head>
+<title>GST pricing tool</title>
+</head>
+<body>
+    <h1><center>GST PRICING TOOL</center></h1>
+    <label for="start"> STARTING PRICE</label><br>
+    <input type="number" id="start" name="start" min="1"><br>
+    <label for="end"> ENDING PRICE(Max difference can be 10000)</label><br>
+    <input type="number" id="end" name="end" min="2"><br>
+    <label for ="percent">Choose the GST percentage</label><br>
+    <input list="gst" id="percent">
+    <datalist id="gst">
+    <option value="5%">
+    <option value="18%">
+    <option value="28%">
+    </datalist><br><br>
+    <input type="submit" value="submit" onclick="calculate()">
+    <div id="amt">
+        <h2> The values are </h2>
+    </div>
+</body>
+<script>
+     
+     function calculate()
+     {
+        let from= Number(document.getElementById("start").value);
+        let to =Number(document.getElementById("end").value);
+        let p =Number(document.getElementById("percent").value.replace("%",""));
+        let amt=document.getElementById("amt");
+        let count=0;
+        amt.innerHTML="";
+        for (let i = from; i <= to; i++) 
+            {   if(count>=10000)
+                {
+                    break;
+                }
+                count++;
+                let dis=(i*p)/100;
+                let fin=dis+i;
+                if(fin%1==0)
+                {   
+                    amt.innerHTML+="Amount : "+i +" Calculated total amount : " + fin +"<br>";
+                    
+                }
+            }
+    }
+
+</script>
+</html>
