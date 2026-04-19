@@ -1,6 +1,9 @@
 # GST Pricing Tool
 
 A web-based tool that calculates the final price of a product after applying GST.
+## Live Demo
+https://harshithan1706nh.github.io/gst-pricing-tool/
+
 
 ## Features
 - Accepts starting price and ending price (with a maximum range of 10,000)
